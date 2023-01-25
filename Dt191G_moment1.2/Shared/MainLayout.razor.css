@@ -1,0 +1,65 @@
+
+
+.page-container { 
+    
+    width: max(350px, 85vw);
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.sidebar {
+    background-color: #fff;
+    margin-top: 0;
+    height: fit-content;
+}
+
+.render-content {
+    background-color: #1b1b1b;
+    text-align: center;
+    padding: 0.5em;
+    color: #fff;
+    height: 70vh;
+    overflow-y:scroll;
+    margin: auto;
+}
+
+.footer-container {
+    position: relative;
+    margin-top: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 750px) {
+    .page-container {
+        flex-direction: row;
+        height: 75vh;
+        gap: 5vw;
+        
+    }
+
+    .sidebar {
+        padding-top: 30px;
+        width: 35%;
+        height: 100%;
+    }
+
+    main {
+        width: 65%;
+        
+        margin-top: 10%;
+        
+    }
+}

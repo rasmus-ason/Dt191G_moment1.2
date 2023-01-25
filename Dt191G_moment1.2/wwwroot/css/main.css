@@ -1,0 +1,141 @@
+﻿body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+h2 {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+button{
+    opacity: 0.85;
+}
+
+button:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.header {
+    width: 100%;
+    background: rgb(28,28,28);
+    background: linear-gradient(90deg, rgba(28,28,28,1) 0%, rgba(222,109,29,1) 39%, rgba(4,108,130,1) 100%);
+    position: fixed;
+    top: 0;
+    color: #fff;
+    text-align: right;
+    
+}
+
+    .header-text {
+        padding-top: 6px;
+        padding-left: 10px;
+        padding-bottom: 6px;
+    }
+
+
+
+
+/* Fetch data table */
+
+.capitalTable {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#capitalTable td, .capitalTable th {
+    text-align: left;
+    padding: 8px;
+}
+
+.capitalTable tr:nth-child(even) {
+    background-color: #252525;
+    text-align: left;
+}
+
+.capitalTable tr:nth-child(odd) {
+    background-color: #222222;
+    text-align: left;
+}
+
+.capitalTable tr:hover {
+    background-color: #000;
+    
+}
+
+.capitalTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #046c82;
+    color: white;
+}
+
+/*Converter*/
+.converter-content {
+    display: flex;
+    flex-direction: column;
+    width: max(200px, 15vw);
+    margin: auto;
+    gap: 10px;
+    
+}
+
+.converter-content button {
+    background-color: #046c82;
+    color: white;
+    border-style: none;
+    padding: 5px 0 5px 0;
+    border-radius: 3px;
+}
+
+.convertResult {
+    background-color: dimgray;
+    color: white;
+    padding: 2px 0 2px 0;
+}
+
+.clearBtn {
+    background-color: #980b0b;
+    margin-top: 10%;
+    padding: 7px 8vw 7px 8vw;
+    border-style:none;
+    color: #fff;
+}
+
+/* Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+/* Footer */
+footer {
+    width: 100%;
+    background: rgb(28,28,28);
+    background: linear-gradient(90deg, rgba(28,28,28,1) 0%, rgba(222,109,29,1) 39%, rgba(4,108,130,1) 100%);
+    padding: 30px 0 40px 0;
+    text-align: center;
+    color: #fff;
+}

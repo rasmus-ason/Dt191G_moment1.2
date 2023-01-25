@@ -1,0 +1,71 @@
+﻿@page "/calculator"
+
+<PageTitle>Calculator</PageTitle>
+
+<h1>Konverterare</h1>
+
+
+<h2>Meter till foot</h2>
+<div class="converter-content">
+    <input type="number" @bind-value="@Meters" />
+    <button @onclick="Convert">Convert</button>
+    @if( Feet != 0)
+    {
+        <p class="convertResult">@Feet feet</p>
+    }
+</div>
+
+
+<h2>Km/h till miles</h2>
+<div class="converter-content">
+    <input type="number" @bind-value="@KMH" />
+    <button @onclick="MilesConvert">Convert</button>
+    @if( Miles != 0)
+    {
+        <p class="convertResult">@Miles miles</p>
+    }
+    
+</div>
+
+
+<button class="clearBtn" @onclick="ClearInputFields">Clear</button>
+
+@code {
+
+    //Models
+    public double Meters { get; set; }
+    public double Feet { get; set; }
+
+    //Meter to feet converter - round to two decimals
+    private void Convert()
+    {
+        double roundedFeet = Meters * 3.28084;
+
+        roundedFeet = Math.Round(roundedFeet, 2);
+
+        Feet = roundedFeet;
+    }
+
+    //Models
+    public double KMH { get; set; }
+    public double Miles { get; set; }
+
+    //Kmh to miles converter - round to decimals
+    private void MilesConvert()
+    {
+        double roundedMiles = KMH * 0.621371192;
+
+        roundedMiles = Math.Round(roundedMiles, 2);
+
+        Miles = roundedMiles;
+    }
+
+    //Clear input fields function
+    private void ClearInputFields()
+    {
+        KMH = 0;
+        Feet = 0;
+        Meters = 0;
+        Miles = 0;
+    }
+}

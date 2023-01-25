@@ -1,0 +1,54 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+@using System.Text.Json;
+
+<PageTitle>Fetch data</PageTitle>
+
+<h1>World Capital List!</h1>
+
+<div class="capitalTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Capital</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var capitals in capitalList){
+                <tr>
+                    <td>@capitals.country</td>
+                    @if (capitals.city != null)
+                    {
+                        <td>@capitals.city</td>
+                    }else
+                    {
+                        <td>NO INFO</td>
+                    }       
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+@code {
+
+    //Declare list
+    private List<CapitalList> capitalList;
+
+    //Fetch data from capitals
+    protected override async Task OnInitializedAsync() {
+        var json = await Http.GetStringAsync("capitals.json");
+        capitalList = JsonSerializer.Deserialize<List<CapitalList>>(json);
+    }
+
+    //Model
+    public class CapitalList
+    {
+        public string? country { get; set; }
+        public string? city { get; set; }
+   
+    }
+}

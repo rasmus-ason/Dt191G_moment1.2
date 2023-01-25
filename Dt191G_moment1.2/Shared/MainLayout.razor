@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+
+<div>
+
+    
+    
+    <Header />
+
+    <div class="page-container">
+    
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+
+        <main>
+            <article class="render-content">
+                @Body
+            </article>
+        </main>
+
+    </div>
+
+    <div class="footer-container">
+        <Footer />
+    </div>
+
+    
+</div>
